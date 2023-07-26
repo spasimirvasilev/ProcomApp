@@ -39,13 +39,13 @@ const UpdateEmployee = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(state),
+        body: JSON.stringify({ ...state, id: parseInt(id as string) }),
       }
     );
 
     if (response.ok) {
       setNotification({
-        message: "User Created",
+        message: "User Updated",
         severity: "success",
         isActive: true,
       });
